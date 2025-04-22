@@ -1,4 +1,5 @@
 import { router } from '@kit.ArkUI'
+import { RoutePath } from '../route/RoutePath'
 
 @Entry
 @Component
@@ -10,10 +11,10 @@ struct SplashPage {
   }
 
   build() {
-    RelativeContainer() {
-
-    }
-    .height('100%')
-    .width('100%')
+    Stack() {
+      Image($r('app.media.splash_bg')).objectFit(ImageFit.ScaleDown)
+    }.width("100%").height("100%")
+    .backgroundColor($r('app.color.color_white'))
+    .alignContent(Alignment.Center);
   }
 }
