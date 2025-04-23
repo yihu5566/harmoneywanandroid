@@ -2,6 +2,7 @@
   "src": [
     "pages/MainPage",
     "pages/Second",
-    "pages/SplashPage"
+    "pages/SplashPage",
+    "pages/home/HomePage"
   ]
 }
