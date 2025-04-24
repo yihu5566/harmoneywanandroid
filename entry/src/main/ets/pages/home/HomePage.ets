@@ -1,23 +1,29 @@
+import { ViewStateConstant } from "../../constants/ViewStateConstant"
+import { HomeModelIssueListItemList } from "../../model/HomeModel"
+import { LogUtils } from "../../utils/LogUtils"
+import { HomeViewModel } from "../../viewmodel/HomeViewModel"
+
 @Entry
 @Component
 export struct HomePage {
-  @State message: string = 'HomePage';
+  @State viewState: string = ViewStateConstant.VIEW_STATE_LOADING
+  @State isRefreshing: boolean = false
+  @State dataList: HomeModelIssueListItemList[] = []
+  @State showLoading: boolean = false
+  @Consume @Watch('onTabSelected') homeTabSelected: number
+
+  aboutToAppear() {
+    HomeViewModel.observeState(state => {
+      this.viewState = state
+    })
+    this.loadNet()
+  }
+
+  onTabSelected() {
+    LogUtils.debug("onTabSelected>>>", `${this.homeTabSelected}`)
+  }
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HomeHelloWorld')
-        .fontSize($r('app.float.page_text_font_size'))
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
-        .onClick(() => {
-          this.message = 'Welcome';
-        })
-    }
-    .height('100%')
-    .width('100%')
+
   }
 }
