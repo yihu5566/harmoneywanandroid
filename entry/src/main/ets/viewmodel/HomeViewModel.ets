@@ -2,7 +2,7 @@ import { getHomeListAxios } from "../http/apiService";
 import { HomeModelIssueListItemList } from "../model/HomeModel";
 import { BaseViewModel, ResultCallback } from "./BaseViewModel";
 
-export class HomeViewModel extends BaseViewModel {
+class HomeViewModel extends BaseViewModel {
   private date: string = ""
 
   revertDate() {

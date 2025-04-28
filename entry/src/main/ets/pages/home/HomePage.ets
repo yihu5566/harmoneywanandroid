@@ -1,7 +1,8 @@
 import { ViewStateConstant } from "../../constants/ViewStateConstant"
 import { HomeModelIssueListItemList } from "../../model/HomeModel"
 import { LogUtils } from "../../utils/LogUtils"
-import { HomeViewModel } from "../../viewmodel/HomeViewModel"
+import { CommonTopBar } from "../../view/CommonTopBar"
+import HomeViewModel from "../../viewmodel/HomeViewModel"
 
 @Entry
 @Component
@@ -23,7 +24,22 @@ export struct HomePage {
     LogUtils.debug("onTabSelected>>>", `${this.homeTabSelected}`)
   }
 
+  loadNet() {
+    HomeViewModel.getHomeList((result) => {
+      this.isRefreshing = false
+      this.showLoading = false
+      if (HomeViewModel.getDate() == "") {
+        this.dataList = result
+      } else {
+        this.dataList = [...this.dataList, ...result]
+      }
+    })
+  }
+
   build() {
+    Column() {
+      CommonTopBar()
+    }
 
   }
 }
