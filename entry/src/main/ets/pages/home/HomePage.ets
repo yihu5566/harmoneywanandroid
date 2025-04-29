@@ -1,8 +1,9 @@
 import { ViewStateConstant } from "../../constants/ViewStateConstant"
 import { HomeModelIssueListItemList } from "../../model/HomeModel"
 import { LogUtils } from "../../utils/LogUtils"
-import { CommonTopBar } from "../../view/CommonTopBar"
+import { CommonTopBar } from "../../views/CommonTopBar"
 import HomeViewModel from "../../viewmodel/HomeViewModel"
+import { StateComponent } from "../../views/StateComponent"
 
 @Entry
 @Component
@@ -11,7 +12,9 @@ export struct HomePage {
   @State isRefreshing: boolean = false
   @State dataList: HomeModelIssueListItemList[] = []
   @State showLoading: boolean = false
-  @Consume @Watch('onTabSelected') homeTabSelected: number
+
+  // 不可和Entry公用
+  // @Consume @Watch('onTabSelected') homeTabSelected: number
 
   aboutToAppear() {
     HomeViewModel.observeState(state => {
@@ -20,9 +23,9 @@ export struct HomePage {
     this.loadNet()
   }
 
-  onTabSelected() {
-    LogUtils.debug("onTabSelected>>>", `${this.homeTabSelected}`)
-  }
+  // onTabSelected() {
+  //   LogUtils.debug("onTabSelected>>>", `${this.homeTabSelected}`)
+  // }
 
   loadNet() {
     HomeViewModel.getHomeList((result) => {
@@ -39,6 +42,9 @@ export struct HomePage {
   build() {
     Column() {
       CommonTopBar({ title: "首页", backButton: false, alpha: 1 }).align(Alignment.TopStart)
+      Stack() {
+        StateComponent()
+      }
     }
 
   }

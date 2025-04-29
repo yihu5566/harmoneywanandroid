@@ -1,5 +1,5 @@
 import router from '@ohos.router';
-import { LoadingDialog } from '../view/LoadingDialog';
+import { LoadingDialog } from '../views/LoadingDialog';
 import emitter from '@ohos.events.emitter'
 import { EventKeys, loadingEvent } from '../event/EventKeys'
 import { GeneratedObjectLiteralInterface_2 } from '../event/LoadingDialogEvent';
