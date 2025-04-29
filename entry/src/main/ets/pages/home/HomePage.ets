@@ -38,7 +38,7 @@ export struct HomePage {
 
   build() {
     Column() {
-      CommonTopBar()
+      CommonTopBar({ title: "首页", backButton: false, alpha: 1 }).align(Alignment.TopStart)
     }
 
   }

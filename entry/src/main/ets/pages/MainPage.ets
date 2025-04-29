@@ -7,13 +7,11 @@ import { HomePage } from './home/HomePage';
 import { LogUtils } from '../utils/LogUtils';
 import { TabItem } from '../model/TabItem';
 import MainViewModel from '../viewmodel/MainViewModel';
-import { it } from '@ohos/hypium';
 import { CommonConstants } from '../constants/CommonConstants';
 import { SystemDataPage } from './system/SystemDataPage';
 import { ProjectPage } from './project/ProjectPage';
 import { NavigationPage } from './navigation/NavigationPage';
 import { WeChatNumberPage } from './gzh/WeChatNumberPage';
-
 
 @Entry
 @Component

@@ -1,8 +1,11 @@
 {
   "src": [
     "pages/MainPage",
-    "pages/Second",
     "pages/SplashPage",
-    "pages/home/HomePage"
+    "pages/home/HomePage",
+    "pages/gzh/WeChatNumberPage",
+    "pages/navigation/NavigationPage",
+    "pages/project/ProjectPage",
+    "pages/system/SystemDataPage"
   ]
 }
