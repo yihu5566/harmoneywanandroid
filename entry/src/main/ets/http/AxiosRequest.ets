@@ -4,7 +4,10 @@
 
 import { AxiosError, AxiosRequestHeaders, AxiosResponse } from "@ohos/axios";
 import { CommonType } from "../model/typeAlias/TypeAlias";
+import { hideLoadingDialog, showLoadingDialog } from "../utils/DialogUtils";
+import { JsonUtils } from "../utils/JsonUtils";
 import { LogUtils } from "../utils/LogUtils";
+import showToast from "../utils/ToastUtil";
 import AxiosHttpRequest, { HttpRequestConfig } from "./AxiosHttp";
 
 const axiosClient = new AxiosHttpRequest({
@@ -19,11 +22,11 @@ const axiosClient = new AxiosHttpRequest({
       // 在发送请求之前做一些处理，例如打印请求信息
       LogUtils.debug('网络请求Request 请求方法:', `${config.method}`);
       LogUtils.debug('网络请求Request 请求链接:', `${config.url}`);
-      // LogUtils.debug('网络请求Request Params:', `\n${JsonUtils.stringify(config.params)}`);
-      // LogUtils.debug('网络请求Request Data:', `${JsonUtils.stringify(config.data)}`);
+      LogUtils.debug('网络请求Request Params:', `\n${JsonUtils.stringify(config.params)}`);
+      LogUtils.debug('网络请求Request Data:', `${JsonUtils.stringify(config.data)}`);
       axiosClient.config.showLoading = config.showLoading
       if (config.showLoading) {
-        // showLoadingDialog("加载中...")
+        showLoadingDialog("加载中...")
       }
       if (config.checkLoginState) {
 
@@ -33,7 +36,7 @@ const axiosClient = new AxiosHttpRequest({
     requestInterceptorCatch: (err) => {
       LogUtils.error("网络请求RequestError", err?.toString())
       if (axiosClient.config.showLoading) {
-        // hideLoadingDialog()
+        hideLoadingDialog()
       }
       return err;
     },
@@ -42,7 +45,7 @@ const axiosClient = new AxiosHttpRequest({
         let config = response.config as HttpRequestConfig
         const checkResultCode = config.checkResultCode
         if (checkResultCode && response.data.errorCode != 0) {
-          // showToast(response.data.errorMsg)
+          showToast(response.data.errorMsg)
           return Promise.reject(response)
         }
         return Promise.resolve(response.data);
@@ -52,7 +55,7 @@ const axiosClient = new AxiosHttpRequest({
     },
     responseInterceptorCatch: (error) => {
       if (axiosClient.config.showLoading) {
-        // hideLoadingDialog()
+        hideLoadingDialog()
       }
       LogUtils.error("网络请求响应异常", error?.toString())
       errorHandler(error);
@@ -64,7 +67,7 @@ const axiosClient = new AxiosHttpRequest({
 
 export function errorHandler(error: CommonType) {
   if (error instanceof AxiosError) {
-    // showToast(error.message)
+    showToast(error.message)
   }
 }
 

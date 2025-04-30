@@ -5,7 +5,6 @@ import { CommonTopBar } from "../../views/CommonTopBar"
 import HomeViewModel from "../../viewmodel/HomeViewModel"
 import { StateComponent } from "../../views/StateComponent"
 import { HomeListItemComponent } from "./HomeListItemComponent"
-import { Router } from "@kit.ArkUI"
 import { RefreshFooter } from "../../views/RefreshFooter"
 import { CommonSkeleton } from "../../views/CommonSkeleton"
 
