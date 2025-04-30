@@ -8,7 +8,7 @@ export struct StateComponent {
   //重试的回调方法
   retryCallback?: () => void
   //是否骨架屏幕
-  private showSkeleton: boolean = false
+   showSkeleton: boolean = false
 
   build() {
     Stack() {

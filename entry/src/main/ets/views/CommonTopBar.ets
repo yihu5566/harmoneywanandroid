@@ -7,7 +7,7 @@ export struct CommonTopBar {
   @Prop alpha: number = 1
   @State statusBarHeight: number = 0
   private titleAlignment: TextAlign = TextAlign.Center
-  private backButton: boolean = true
+  backButton: boolean = true
   private onBackClick?: () => void
 
   aboutToAppear(): void {
