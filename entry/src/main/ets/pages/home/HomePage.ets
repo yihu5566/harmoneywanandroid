@@ -33,6 +33,9 @@ export struct HomePage {
 
   loadNet() {
     HomeViewModel.getHomeList((result) => {
+
+      LogUtils.debug("数据返回成功。。。")
+      LogUtils.debug(result.toString())
       this.isRefreshing = false
       this.showLoading = false
       if (HomeViewModel.getDate() == "") {
@@ -51,7 +54,7 @@ export struct HomePage {
           viewState: this.viewState,
           showSkeleton: true,
           retryCallback: () => {
-            // this.loadNet()
+            this.loadNet()
           }
         }) {
           Refresh({ refreshing: $$this.isRefreshing, offset: 100, friction: 100 }) {
@@ -81,11 +84,11 @@ export struct HomePage {
             })
             .onReachEnd(() => {
               this.showLoading = true
-              // this.loadNet()
+              this.loadNet()
             })
           }.onRefreshing(() => {
             HomeViewModel.revertDate()
-            // this.loadNet()
+            this.loadNet()
           }).padding({ left: 10, right: 10 })
         }
       }.layoutWeight(1)
