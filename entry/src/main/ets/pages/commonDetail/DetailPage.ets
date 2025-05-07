@@ -38,7 +38,12 @@ struct DetailPage {
 
   @Builder
   headerPlayer() {
-    VideoComponent({ showControls: this.showControls, playUrl: this.playUrl, isAutoPlay: this.isAutoPlay })
+    VideoComponent({
+      showControls: this.showControls,
+      playUrl: this.playUrl,
+      isAutoPlay: this.isAutoPlay,
+      controller: this.videoController
+    })
       .width('100%')
       .height($r('app.float.size_250'))
   }

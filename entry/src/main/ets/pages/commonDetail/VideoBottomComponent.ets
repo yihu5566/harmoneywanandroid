@@ -1,6 +1,7 @@
 import { it } from "@ohos/hypium";
 import { ViewStateConstant } from "../../constants/ViewStateConstant";
 import { HomeModelIssueListItemList } from "../../model/HomeModel";
+import { LogUtils } from "../../utils/LogUtils";
 import VideoDetailViewModel from "../../viewmodel/VideoDetailViewModel";
 import { StateComponent } from "../../views/StateComponent";
 
@@ -13,11 +14,11 @@ export struct VideoBottomComponent {
   relationId: number = -1
 
   aboutToAppear(): void {
-    VideoDetailViewModel.observeState((state => {
-      this.viewState = state
-      VideoDetailViewModel.relationId = this.relationId
-      this.loadNet()
-    }))
+    VideoDetailViewModel.observeState((state =>
+    this.viewState = state
+    ))
+    VideoDetailViewModel.relationId = this.relationId
+    this.loadNet()
   }
 
   loadNet() {

@@ -5,8 +5,8 @@ export struct VideoComponent {
   @Link playUrl: string;
   @Link showControls: boolean;
   @State showLoading: boolean = true;
-  private controller?: VideoController;
-  private isAutoPlay: boolean = false
+  public controller?: VideoController;
+  public isAutoPlay: boolean = false
 
   build() {
     Stack() {
