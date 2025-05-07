@@ -41,6 +41,7 @@ const axiosClient = new AxiosHttpRequest({
       return err;
     },
     responseInterceptor: (response: AxiosResponse) => {
+      LogUtils.debug('网络请求响应Response:', `\n${JsonUtils.stringify(response.data)}`);
       if (response.status === 200) {
         let config = response.config as HttpRequestConfig
         const checkResultCode = config.checkResultCode

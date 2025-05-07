@@ -19,3 +19,11 @@ export function getHomeListAxios(date: string = "") {
     headers: commonHeader
   })
 }
+
+export function getRelationList(id: number) {
+  return axiosClient.get<HomeModel>({
+    url: baseUrl + "api/v4/video/related",
+    params: { "id": id },
+    headers: commonHeader
+  })
+}

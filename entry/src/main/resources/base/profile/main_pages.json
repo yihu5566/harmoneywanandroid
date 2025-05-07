@@ -6,6 +6,7 @@
     "pages/gzh/WeChatNumberPage",
     "pages/navigation/NavigationPage",
     "pages/project/ProjectPage",
-    "pages/system/SystemDataPage"
+    "pages/system/SystemDataPage",
+    "pages/commonDetail/DetailPage"
   ]
 }

@@ -46,7 +46,7 @@ export struct CommonTopBar {
 
     Column() {
       Blank().backgroundColor($r('app.color.color_red')).opacity(this.alpha)
-      Stack({ alignContent: Alignment.Center }) {
+      Stack({ alignContent: Alignment.Start }) {
         Stack()
           .height($r('app.float.size_50'))
           .width('100%')
@@ -63,7 +63,7 @@ export struct CommonTopBar {
             .textOverflow({ overflow: TextOverflow.Ellipsis })
         }.height($r('app.float.size_50'))
         .margin({ left: $r('app.float.size_50'), right: $r('app.float.size_50') })
-        .align(Alignment.Center)
+        .alignSelf(ItemAlign.Center)
 
         if (this.backButton) {
           Stack() {

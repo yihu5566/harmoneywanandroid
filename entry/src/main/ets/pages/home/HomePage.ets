@@ -7,6 +7,9 @@ import { StateComponent } from "../../views/StateComponent"
 import { HomeListItemComponent } from "./HomeListItemComponent"
 import { RefreshFooter } from "../../views/RefreshFooter"
 import { CommonSkeleton } from "../../views/CommonSkeleton"
+import { RoutePath } from "../../route/RoutePath"
+import { Router } from "../../route/Router"
+import { CategoryRouteParams } from "../../route/RouteParams"
 
 @Entry
 @Component
@@ -34,7 +37,6 @@ export struct HomePage {
     HomeViewModel.getHomeList((result) => {
 
       LogUtils.debug("数据返回成功。。。")
-      LogUtils.debug(result.toString())
       this.isRefreshing = false
       this.showLoading = false
       if (HomeViewModel.getDate() == "") {
@@ -61,10 +63,10 @@ export struct HomePage {
               ForEach(this.dataList, (item: HomeModelIssueListItemList, index: number) => {
                 ListItem() {
                   HomeListItemComponent({ item: item }).onClick(() => {
-                    // Router.push(RoutePath.DetailPage, {
-                    //   "id": item?.data?.id,
-                    //   "playUrl": item?.data?.playUrl
-                    // } as CategoryRouteParams)
+                    Router.push(RoutePath.DetailPage, {
+                      "id": item?.data?.id,
+                      "playUrl": item?.data?.playUrl
+                    } as CategoryRouteParams)
                   })
                 }
               })
