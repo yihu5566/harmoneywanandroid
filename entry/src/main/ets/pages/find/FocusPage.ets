@@ -1,7 +1,6 @@
-@Entry
 @Component
-export struct WeChatNumberPage {
-  @State message: string = 'WeChatNumberPage';
+export struct FocusPage {
+  @State message: string = 'NavigationPage';
 
   build() {
     RelativeContainer() {

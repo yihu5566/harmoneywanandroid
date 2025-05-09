@@ -34,7 +34,7 @@ export class MainViewModel {
     },
     {
       index: 4,
-      title: "公众号",
+      title: "发现",
       imageActivated: $r('app.media.icon_sel_home'),
       imageOriginal: $r('app.media.icon_unsel_home')
     }

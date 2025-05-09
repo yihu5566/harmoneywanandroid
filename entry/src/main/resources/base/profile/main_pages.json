@@ -3,7 +3,7 @@
     "pages/MainPage",
     "pages/SplashPage",
     "pages/home/HomePage",
-    "pages/gzh/WeChatNumberPage",
+    "pages/find/FindPage",
     "pages/navigation/NavigationPage",
     "pages/project/ProjectPage",
     "pages/system/SystemDataPage",

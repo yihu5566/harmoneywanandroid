@@ -11,7 +11,7 @@ import { CommonConstants } from '../constants/CommonConstants';
 import { SystemDataPage } from './system/SystemDataPage';
 import { ProjectPage } from './project/ProjectPage';
 import { NavigationPage } from './navigation/NavigationPage';
-import { WeChatNumberPage } from './gzh/WeChatNumberPage';
+import { FindPage } from './find/FindPage';
 
 @Entry
 @Component
@@ -70,7 +70,7 @@ struct MainPage {
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[3], 3))
 
         TabContent() {
-          WeChatNumberPage()
+          FindPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[4], 4))
       }
       .barMode(BarMode.Fixed)
