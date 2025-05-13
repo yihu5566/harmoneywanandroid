@@ -1,4 +1,5 @@
 import { AxiosHeaders } from "@ohos/axios"
+import { CategoryModel } from "../model/CategoryModel"
 import { FocusModel } from "../model/FocusModel"
 import { HomeModel } from "../model/HomeModel"
 import axiosClient from "./AxiosRequest"
@@ -40,4 +41,18 @@ export function getFocusData(pageIndex: number = 0) {
       headers: commonHeader
     }
   )
+}
+
+/**
+ * 获取分类数据
+ * @returns
+ */
+export function getCategories() {
+  return axiosClient.get<CategoryModel>({
+    url: baseUrl + "api/v4/categories",
+    showLoading: true,
+    checkLoginState: true,
+    needJumpToLogin: true,
+    headers: commonHeader
+  })
 }
