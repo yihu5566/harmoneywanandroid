@@ -1,4 +1,5 @@
 import { AxiosHeaders } from "@ohos/axios"
+import { FocusModel } from "../model/FocusModel"
 import { HomeModel } from "../model/HomeModel"
 import axiosClient from "./AxiosRequest"
 
@@ -26,4 +27,17 @@ export function getRelationList(id: number) {
     params: { "id": id },
     headers: commonHeader
   })
+}
+
+/**
+ * 获取关注接口
+ */
+export function getFocusData(pageIndex: number = 0) {
+  return axiosClient.get<FocusModel>(
+    {
+      url: baseUrl + "api/v4/tabs/follow",
+      params: { "start": pageIndex },
+      headers: commonHeader
+    }
+  )
 }

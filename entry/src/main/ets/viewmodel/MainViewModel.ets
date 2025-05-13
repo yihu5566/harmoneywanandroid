@@ -16,9 +16,9 @@ export class MainViewModel {
     },
     {
       index: 1,
-      title: "体系",
-      imageActivated: $r('app.media.icon_sel_home'),
-      imageOriginal: $r('app.media.icon_unsel_home')
+      title: "发现",
+      imageActivated: $r('app.media.icon_sel_find'),
+      imageOriginal: $r('app.media.icon_unsel_find')
     },
     {
       index: 2,
@@ -34,9 +34,9 @@ export class MainViewModel {
     },
     {
       index: 4,
-      title: "发现",
-      imageActivated: $r('app.media.icon_sel_find'),
-      imageOriginal: $r('app.media.icon_unsel_find')
+      title: "体系",
+      imageActivated: $r('app.media.icon_sel_home'),
+      imageOriginal: $r('app.media.icon_unsel_home')
     }
   ]
 }

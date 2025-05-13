@@ -58,8 +58,9 @@ struct MainPage {
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[0], 0))
 
         TabContent() {
-          SystemDataPage()
+          FindPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[1], 1))
+
 
         TabContent() {
           ProjectPage()
@@ -70,8 +71,9 @@ struct MainPage {
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[3], 3))
 
         TabContent() {
-          FindPage()
+          SystemDataPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[4], 4))
+
       }
       .barMode(BarMode.Fixed)
       .barWidth('100%')
