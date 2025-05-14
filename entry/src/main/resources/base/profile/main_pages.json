@@ -7,6 +7,8 @@
     "pages/navigation/NavigationPage",
     "pages/project/ProjectPage",
     "pages/system/SystemDataPage",
-    "pages/commonDetail/DetailPage"
+    "pages/commonDetail/DetailPage",
+    "pages/categoryDetail/CategoryDetailPage",
+    "pages/topicDetail/TopicDetailPage"
   ]
 }

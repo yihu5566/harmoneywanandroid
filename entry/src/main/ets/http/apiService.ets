@@ -1,7 +1,10 @@
 import { AxiosHeaders } from "@ohos/axios"
+import { CommonConstants } from "../constants/CommonConstants"
 import { CategoryModel } from "../model/CategoryModel"
 import { FocusModel } from "../model/FocusModel"
 import { HomeModel } from "../model/HomeModel"
+import { TopicDetailModel } from "../model/TopicDetailModel"
+import { TopicModel } from "../model/TopicModel"
 import axiosClient from "./AxiosRequest"
 
 let baseUrl = "https://baobab.kaiyanapp.com/"
@@ -55,4 +58,42 @@ export function getCategories() {
     needJumpToLogin: true,
     headers: commonHeader
   })
+}
+
+export function getTopicData(start: number = 0) {
+  return axiosClient.get<TopicModel>(
+    {
+      url: baseUrl + "api/v3/specialTopics",
+      params: { "start": start },
+      headers: commonHeader
+    }
+  )
+}
+
+export function getCategoryDetailList(id: number, start: number) {
+  return axiosClient.get<HomeModel>(
+    {
+      url: baseUrl + "api/v4/categories/videoList",
+      params: {
+        "id": id,
+        "start": start,
+        "udid": CommonConstants.UUID,
+        deviceModel: CommonConstants.DEVICE_NUM
+      },
+      headers: commonHeader
+    }
+  )
+}
+
+/**
+ *获取主题详情接口
+ * @param id
+ */
+export function getTopicDetailList(id: number) {
+  return axiosClient.get<TopicDetailModel>(
+    {
+      url: baseUrl + "api/v3/lightTopics/internal/" + id,
+      headers: commonHeader
+    }
+  )
 }

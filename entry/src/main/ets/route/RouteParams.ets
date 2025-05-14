@@ -4,3 +4,7 @@ export interface CategoryRouteParams {
   title: string,
   playUrl: string
 }
+
+export interface CommonRouteParams {
+  id: number
+}
