@@ -5,8 +5,7 @@
     "pages/home/HomePage",
     "pages/find/FindPage",
     "pages/hot/HotPage",
-    "pages/navigation/NavigationPage",
-    "pages/system/SystemDataPage",
+    "pages/mine/MinePage",
     "pages/commonDetail/DetailPage",
     "pages/categoryDetail/CategoryDetailPage",
     "pages/topicDetail/TopicDetailPage"

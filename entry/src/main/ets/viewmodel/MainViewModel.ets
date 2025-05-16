@@ -28,13 +28,7 @@ export class MainViewModel {
     },
     {
       index: 3,
-      title: "导航",
-      imageActivated: $r('app.media.icon_sel_home'),
-      imageOriginal: $r('app.media.icon_unsel_home')
-    },
-    {
-      index: 4,
-      title: "体系",
+      title: "我的",
       imageActivated: $r('app.media.icon_sel_home'),
       imageOriginal: $r('app.media.icon_unsel_home')
     }

@@ -8,9 +8,8 @@ import { LogUtils } from '../utils/LogUtils';
 import { TabItem } from '../model/TabItem';
 import MainViewModel from '../viewmodel/MainViewModel';
 import { CommonConstants } from '../constants/CommonConstants';
-import { SystemDataPage } from './system/SystemDataPage';
 import { HotPage } from './hot/HotPage';
-import { NavigationPage } from './navigation/NavigationPage';
+import { MinePage } from './mine/MinePage';
 import { FindPage } from './find/FindPage';
 
 @Entry
@@ -66,12 +65,8 @@ struct MainPage {
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[2], 2))
 
         TabContent() {
-          NavigationPage()
+          MinePage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[3], 3))
-
-        TabContent() {
-          SystemDataPage()
-        }.tabBar(this.TabBottom(MainViewModel.tabTitle[4], 4))
 
       }
       .barMode(BarMode.Fixed)
