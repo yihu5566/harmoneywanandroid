@@ -97,3 +97,18 @@ export function getTopicDetailList(id: number) {
     }
   )
 }
+
+/**
+ * 获取排行榜
+ * @param rankType "weekly" "monthly" "historical"
+ * @returns
+ */
+export function getRankList(rankType: string) {
+  return axiosClient.get<HomeModel>(
+    {
+      url: baseUrl + "api/v4/rankList/videos",
+      params: { "strategy": rankType },
+      headers: commonHeader
+    }
+  )
+}

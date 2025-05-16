@@ -9,7 +9,7 @@ import { TabItem } from '../model/TabItem';
 import MainViewModel from '../viewmodel/MainViewModel';
 import { CommonConstants } from '../constants/CommonConstants';
 import { SystemDataPage } from './system/SystemDataPage';
-import { ProjectPage } from './project/ProjectPage';
+import { HotPage } from './hot/HotPage';
 import { NavigationPage } from './navigation/NavigationPage';
 import { FindPage } from './find/FindPage';
 
@@ -61,9 +61,8 @@ struct MainPage {
           FindPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[1], 1))
 
-
         TabContent() {
-          ProjectPage()
+          HotPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[2], 2))
 
         TabContent() {

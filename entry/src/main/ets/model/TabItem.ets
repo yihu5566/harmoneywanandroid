@@ -18,4 +18,6 @@ export class TabItem {
    * Image original.
    */
   imageOriginal?: Resource;
+
+  rankType?: string
 }
