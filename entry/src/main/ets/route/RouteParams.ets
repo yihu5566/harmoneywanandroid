@@ -8,3 +8,7 @@ export interface CategoryRouteParams {
 export interface CommonRouteParams {
   id: number
 }
+
+export interface ContainerRouteParams {
+  containerType: string
+}

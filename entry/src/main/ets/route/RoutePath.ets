@@ -4,4 +4,5 @@ export class RoutePath {
   static readonly DetailPage = "pages/commonDetail/DetailPage"
   static readonly CategoryDetailPage = "pages/categoryDetail/CategoryDetailPage"
   static readonly TopicDetailPage = "pages/topicDetail/TopicDetailPage"
+  static readonly ContainerPage = "pages/container/ContainerPage"
 }

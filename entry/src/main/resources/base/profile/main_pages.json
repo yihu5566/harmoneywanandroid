@@ -8,6 +8,7 @@
     "pages/mine/MinePage",
     "pages/commonDetail/DetailPage",
     "pages/categoryDetail/CategoryDetailPage",
-    "pages/topicDetail/TopicDetailPage"
+    "pages/topicDetail/TopicDetailPage",
+    "pages/container/ContainerPage"
   ]
 }

@@ -17,7 +17,7 @@ export struct TopicPage {
   @State topicList: TopicModelItemList[] = [];
   @Consume @Watch("onHomeTabSelected") homeTabSelected: number
   @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number
-  private hasInit = false
+  hasInit = false
 
   aboutToAppear() {
     TopicViewModel.observeState((state) => this.viewState = state)

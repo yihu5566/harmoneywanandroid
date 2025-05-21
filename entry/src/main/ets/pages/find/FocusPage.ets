@@ -15,7 +15,7 @@ export struct FocusPage {
   @State showLoading: boolean = false;
   @Consume @Watch("onHomeTabSelected") homeTabSelected: number
   @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number
-  private hasInit = false
+  hasInit = false
 
   aboutToAppear() {
     FocusViewModel.observeState((state) => this.viewState = state)

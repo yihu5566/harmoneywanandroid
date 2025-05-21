@@ -1,3 +1,4 @@
+import { ContainerRouteParams } from "../../route/RouteParams";
 import { RoutePath } from "../../route/RoutePath";
 import { Router } from "../../route/Router";
 import { CommonDialog } from "../../views/CommonDialog"
@@ -39,13 +40,13 @@ export struct MinePage {
         .alignItems(HorizontalAlign.Center)
 
         this.itemBuilder("关注", $r('app.media.icon_focus'), () => {
-          // Router.push(RoutePath.ContainerPage, { "containerType": "focus" })
+          Router.push(RoutePath.ContainerPage, { "containerType": "focus" } as ContainerRouteParams)
         })
         this.itemBuilder("分类", $r('app.media.icon_type'), () => {
-          // Router.push(RoutePath.ContainerPage, { "containerType": "category" })
+          Router.push(RoutePath.ContainerPage, { "containerType": "category" } as ContainerRouteParams)
         })
         this.itemBuilder("热门", $r('app.media.icon_topic'), () => {
-          // Router.push(RoutePath.ContainerPage, { "containerType": "topic" })
+          Router.push(RoutePath.ContainerPage, { "containerType": "topic" } as ContainerRouteParams)
         })
         this.itemBuilder("测试Result校验", $r('app.media.icon_topic'), () => {
           // Router.push(RoutePath.TestPage)
@@ -74,7 +75,7 @@ export struct MinePage {
   itemBuilder(title: string, icon: Resource, onItemClick?: () => void) {
     Stack({ alignContent: Alignment.Bottom }) {
       Row() {
-        Image(icon).width($r('app.float.size_50')).height($r('app.float.size_50'))
+        Image(icon).width($r('app.float.size_25')).height($r('app.float.size_25'))
         Text(title)
           .fontSize($r('app.float.size_text_15'))
           .fontColor($r('app.color.color_333'))

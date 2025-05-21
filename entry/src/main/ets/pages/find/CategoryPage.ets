@@ -17,7 +17,7 @@ export struct CategoryPage {
   @State dataSource: BaseDataSourceWrapper<CategoryModelChild> = new BaseDataSourceWrapper<CategoryModelChild>([])
   @Consume @Watch("onHomeTabSelected") homeTabSelected: number;
   @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number;
-  private hasInit: boolean = false;
+  hasInit: boolean = false;
 
   aboutToAppear(): void {
     CategoryViewModel.observeState((state) => {
