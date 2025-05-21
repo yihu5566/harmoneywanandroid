@@ -15,9 +15,9 @@ export struct TopicPage {
   @State showLoading: boolean = false;
   @State isRefreshing: boolean = false;
   @State topicList: TopicModelItemList[] = [];
-  @Consume @Watch("onHomeTabSelected") homeTabSelected: number
-  @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number
-  hasInit = false
+  @Consume("homeTabSelected") @Watch("onHomeTabSelected") homeTabSelected: number
+  @Consume("findCurrentIndex") @Watch("onFindTabSelectedIndex") findCurrentIndex: number
+  private hasInit:boolean = false
 
   aboutToAppear() {
     TopicViewModel.observeState((state) => this.viewState = state)

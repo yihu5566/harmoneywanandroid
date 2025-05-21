@@ -13,9 +13,9 @@ export struct FocusPage {
   @State isRefreshing: boolean = false;
   @State dataList: FocusModelItemList[] = []
   @State showLoading: boolean = false;
-  @Consume @Watch("onHomeTabSelected") homeTabSelected: number
-  @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number
-  hasInit = false
+  @Consume("homeTabSelected") @Watch("onHomeTabSelected") homeTabSelected: number
+  @Consume("findCurrentIndex") @Watch("onFindTabSelectedIndex") findCurrentIndex: number
+  private hasInit: boolean = false
 
   aboutToAppear() {
     FocusViewModel.observeState((state) => this.viewState = state)

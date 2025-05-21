@@ -15,9 +15,9 @@ export struct CategoryPage {
   @State viewState: string = ViewStateConstant.VIEW_STATE_LOADING
   @State dataList: CategoryModel = []
   @State dataSource: BaseDataSourceWrapper<CategoryModelChild> = new BaseDataSourceWrapper<CategoryModelChild>([])
-  @Consume @Watch("onHomeTabSelected") homeTabSelected: number;
-  @Consume @Watch("onFindTabSelectedIndex") findCurrentIndex: number;
-  hasInit: boolean = false;
+  @Consume("homeTabSelected") @Watch("onHomeTabSelected") homeTabSelected: number;
+  @Consume("findCurrentIndex") @Watch("onFindTabSelectedIndex") findCurrentIndex: number;
+  private hasInit: boolean = false;
 
   aboutToAppear(): void {
     CategoryViewModel.observeState((state) => {

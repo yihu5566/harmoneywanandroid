@@ -10,6 +10,8 @@ import { TopicPage } from '../find/TopicPage'
 struct ContainerPage {
   @State containerType: string = "focus"
   @State title: string = "关注"
+  @Provide homeTabSelected: number = 0
+  @Provide findCurrentIndex: number = 0
 
   aboutToAppear(): void {
     const params = router.getParams() as ContainerRouteParams
@@ -30,7 +32,7 @@ struct ContainerPage {
     if (this.containerType == 'focus') {
       this.title = "关注"
     } else if (this.containerType == 'topic') {
-      this.title = "主题"
+      this.title = "热门"
     } else if (this.containerType == 'category') {
       this.title = "分类"
     }
